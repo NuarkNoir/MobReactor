@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MobReactor</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Настройки</string>
+    <string name="image_not_loaded">Blajad! Ничего нет!</string>
+    <string name="load">Sync</string>
+    <string name="action_clear">Очистить</string>
+    <string name="action_save">Сохранить</string>
+    <string name="url_string">"URL: "</string>
+    <string name="author_not_loaded">Ник автора не загружен</string>
+    <string name="img_tags">Тэги изображения не загружены</string>
+    <string name="date_date">Date::Date</string>
+    <string name="date_time">Date::Time</string>
+    <string name="sync_with_reactor">Sync w/ Reactor</string>
+    <string name="functions">Functions</string>
+    <string name="options">Options</string>
+    <string name="action_load_previouspage">Предыдущая страница</string>
+    <string name="action_load_nextpage">Следующая страница</string>
+    <string name="save_dir">MRF</string>
+    <string name="ave_dirstring">Сохранить путь</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+</resources>

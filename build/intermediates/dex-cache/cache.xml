@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_305e9c4e469a453127cadb8ffbf2981dbcc45e21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\libs\jsoup-1.10.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6b471012876a440ae746860d80738be2dd104655">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\jsoup-1.10.1_3f77cffaad3056401911bcb1a206e009697cc9f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_95833afcd2d3721622291c9a50d4e412e385048f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_b6755168ab3a1d040d9b32648b3ffa59effc3ed4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_0dadb15a7be3062859781db2900757c7f3af1b9a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_b211bfbf8dcc79cf09c4d878c827aa11533fec66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\libs\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_066f4fa681e409be677d70fdea8aa03fe22d4c18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\glide-3.7.0_be9c62d840c9cbbef2a63a27ddbd9c8f59ff4ba5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_6b6c742d0b58e30203d82c661e1734e5af837b22.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_38950d630dbc730f5c839c93fd0da080315f4f1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_3f5c240788f44ed13de2be0c953937c3a0f21f80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.1_943eb43c55df8427ba756f938ccc6a42b97382ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_b8db21297a99312a7e89bf58a11af4a40a6a7443.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_267ded7a7957eea7c8c0712ef65524c4abd9c754.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.daimajia.numberprogressbar\library\1.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4196173ec5799ff211761f90874802789c6cc4ac">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.daimajia.numberprogressbar-library-1.2_7fc64115653054c76d9eb2ddede7b95f62a42098.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.mani\ThinDownloadManager\1.2.5\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83ce05d9bee3aa384135330fa6a4fdab65d0e35">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.mani-ThinDownloadManager-1.2.5_451e242e145aedc7cba58c177e9feca43cabe9db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_ebc6bb91d099630a016e77117e69084b7ccd95e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.2.1_3f5c240788f44ed13de2be0c953937c3a0f21f80.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-alpha8\constraint-layout-solver-1.0.0-alpha8.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="80c371a4fd5e1b77f0e3a25b171356878543ffdd">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.0-alpha8_da9d234ddbd935125703b3aeb31dac621ce2f10d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_a35a5bbe7b46119679e1aa6d50fac7ce404f021e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_4d4c75303828987c721b2ce11ffcda36b9df273b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.0-alpha8\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0e753ea8d0a2dea270da7d96a7d6e9d2e9c10f94">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support.constraint-constraint-layout-1.0.0-alpha8_f8d87ff8c879927e2d50009e9bf5299f14d9891c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="1b254fa77dc44833abfc6874081bc8a99434c195">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_40e0158c73fc9ab9dd6be54c390587abf96fdbd8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_10cd953c940accdea77ebb67004f63b8f836c70e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.2.1_95833afcd2d3721622291c9a50d4e412e385048f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_267ded7a7957eea7c8c0712ef65524c4abd9c754.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.2.1_943eb43c55df8427ba756f938ccc6a42b97382ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_8cc1bc0b5c3cf943a9fbb90ab84ee8427eaf4b1b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_4d4c75303828987c721b2ce11ffcda36b9df273b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\glide-3.7.0_be9c62d840c9cbbef2a63a27ddbd9c8f59ff4ba5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_b211bfbf8dcc79cf09c4d878c827aa11533fec66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\libs\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_066f4fa681e409be677d70fdea8aa03fe22d4c18.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\libs\jsoup-1.10.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="6b471012876a440ae746860d80738be2dd104655">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\jsoup-1.10.1_3f77cffaad3056401911bcb1a206e009697cc9f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-24.2.1_0dadb15a7be3062859781db2900757c7f3af1b9a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.mani\ThinDownloadManager\1.2.5\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f83ce05d9bee3aa384135330fa6a4fdab65d0e35">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.mani-ThinDownloadManager-1.2.5_451e242e145aedc7cba58c177e9feca43cabe9db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-24.2.1_b6755168ab3a1d040d9b32648b3ffa59effc3ed4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_305e9c4e469a453127cadb8ffbf2981dbcc45e21.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-24.2.1_6b6c742d0b58e30203d82c661e1734e5af837b22.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_2ca67ff56b6bc572c1dee0fe79dc39e5fc12518a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_2ca67ff56b6bc572c1dee0fe79dc39e5fc12518a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-24.2.1_b8db21297a99312a7e89bf58a11af4a40a6a7443.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.2.1_38950d630dbc730f5c839c93fd0da080315f4f1a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-24.2.1_a35a5bbe7b46119679e1aa6d50fac7ce404f021e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.0-alpha8\constraint-layout-solver-1.0.0-alpha8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="80c371a4fd5e1b77f0e3a25b171356878543ffdd">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.0-alpha8_da9d234ddbd935125703b3aeb31dac621ce2f10d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_10cd953c940accdea77ebb67004f63b8f836c70e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support.constraint\constraint-layout\1.0.0-alpha8\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0e753ea8d0a2dea270da7d96a7d6e9d2e9c10f94">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support.constraint-constraint-layout-1.0.0-alpha8_f8d87ff8c879927e2d50009e9bf5299f14d9891c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.2.1_8cc1bc0b5c3cf943a9fbb90ab84ee8427eaf4b1b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_ebc6bb91d099630a016e77117e69084b7ccd95e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.daimajia.numberprogressbar\library\1.2\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="4196173ec5799ff211761f90874802789c6cc4ac">
+        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.daimajia.numberprogressbar-library-1.2_7fc64115653054c76d9eb2ddede7b95f62a42098.jar" />
+    </item>
+
+</items>
