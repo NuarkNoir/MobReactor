@@ -4,39 +4,47 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ListView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import org.jsoup.Connection;
-import org.jsoup.Jsoup;
+import org.jsoup.helper.HttpConnection;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 
-import java.util.Collections;
+import java.io.IOException;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static String login, password, login_container, password_container, csrf_token;
-    static Document d;
-    static Elements loginContainer;
+    private static String login, pass, csrf_token;
+    static Boolean logined = false;
+    Globals.Cookies gc = new Globals.Cookies();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-    }
 
-    public void login(View view) {
-        loginTask lT = new loginTask();
-        lT.execute();
+        Button loginBtn = (Button) findViewById(R.id.login_button);
+        loginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loginTask lT = new loginTask();
+                lT.execute();
+            }
+        });
     }
 
     class loginTask extends AsyncTask<Void, Void, Void> {
         //http://try.jsoup.org/~a5UybIswFzRGoKv9HQQQe784nlk
         @Override
         protected Void doInBackground(Void... params) {
-            login();
+            makeAuth();
             return null;
         }
 
@@ -49,42 +57,74 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPostExecute(Void result) {
             super.onPostExecute(result);
             TextView tv = (TextView) findViewById(R.id.csrf_token);
-            tv.setText(csrf_token);
+            tv.setText(csrf_token + ":::" + logined + ":::" + Globals.getUsername());
+            if (!logined) tv.setTextColor(getResources().getColor(R.color.colorPrimary));
+            else tv.setTextColor(getResources().getColor(R.color.colorAccent));
         }
     }
 
-    public static void login() {
+    void makeAuth() {
         try {
-            d = Jsoup.connect("http://pornreactor.cc/login").get();
-            System.out.println("\n\n\n" + d.html() + "\n\n\n");
-        } catch (Exception ex) {
-            System.out.println("Ашипка D: \n" + ex.getMessage());
-        }
+            String loginURL = Globals.getJoyUrl() + "/login";
+            String itemURL = Globals.getJoyUrl();
+            String useragent = "Maxthon";
 
-        if (d != null) {
-            loginContainer = d.select(".qtipped .sfSignin");
-            for (Element _item : loginContainer) {
-                csrf_token = _item.select("#signin__csrf_token").attr("value");
-                //login_container = _item.select("input[type=text]").;
+            EditText loginLV = (EditText) findViewById(R.id.login_input);
+            EditText passwordLV = (EditText) findViewById(R.id.password_input);
+
+            login = loginLV.getText().toString();
+            pass = passwordLV.getText().toString();
+
+            //получаем страницу входа
+            Connection connection1 = HttpConnection.connect(itemURL)
+                    .ignoreHttpErrors(true)
+                    .userAgent(useragent);
+            Connection.Response response1 = connection1
+                    .execute();
+            //цапаем оттуда токен
+            csrf_token = response1.parse().getElementById("signin__csrf_token").attr("value");
+            System.out.println("token:::" + csrf_token);
+
+            for (Map.Entry<String, String> cookie : response1.cookies().entrySet()) {
+                System.out.println("cookie1");
+                System.out.println(cookie.getKey() + " : " + cookie.getValue());
             }
-            //System.out.println("\n\n\n" + loginContainer.html() + "\n\n\n");
-        }
-		
-		ListView loginLV = (ListView) findViewById(R.id.);
-		ListView passwordLV = (ListView) findViewById(R.id.);
-		
-		login = loginLV.text();
-		password = passwordLV.text();
-		
-		Connection conn = Jsoup.connect("http://pornreactor.cc/login");
-		conn.data("username", login);
-		conn.data("password", password);
-		conn.data("_csrf_token", csrf_token);
-		conn.method(Connection.Method.POST);
-		Response resp = conn.execute();
-		System.out.println("statusCode: " + resp.statusCode());
-		Document doc = conn.url("http://pornreactor.cc/").post();
-		System.out.println(doc.select("ul.login_wr").html());
-    }
+            for (Map.Entry<String, String> head : response1.headers().entrySet()) {
+                System.out.println("headers1");
+                System.out.println(head.getKey() + " : " + head.getValue());
+            }
+            //делаем пост запрос
+            Connection connection2 = connection1.url(loginURL)
+                    .cookies(response1.cookies())
+                    .ignoreHttpErrors(true)
+                    .data("signin[username]", login)
+                    .data("signin[password]", pass)
+                    .data("signin[_csrf_token]", csrf_token)
+                    .method(Connection.Method.POST)
+                    .followRedirects(true);
 
+            Connection.Response response2 = connection2.execute();
+            for (Map.Entry<String, String> cookie : response2.cookies().entrySet()) {
+                System.out.println("cookie2");
+                System.out.println(cookie.getKey() + " : " + cookie.getValue());
+            }
+            for (Map.Entry<String, String> head : response2.headers().entrySet()) {
+                System.out.println("headers2");
+                System.out.println(head.getKey() + " : " + head.getValue());
+            }
+
+            Document tt2 = response2.parse();
+            String t2 = tt2.select(".login").html();
+            System.out.println("login tag2:::" + t2);
+            String error2 = tt2.select(".error_list").text();
+            System.out.println("error tag2:::" + error2);
+            // получаем страницу (уже должны быть авторизованы)
+            if (t2.contains("Выход")) logined = true;
+            Globals.Cookies.setCookies(response2.cookies());
+            Globals.setUsername(tt2.select(".login"));
+            Globals.setUserAvatarUrl();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

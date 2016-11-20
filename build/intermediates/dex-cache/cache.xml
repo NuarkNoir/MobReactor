@@ -129,15 +129,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.daimajia.numberprogressbar\library\1.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4196173ec5799ff211761f90874802789c6cc4ac">
-        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.daimajia.numberprogressbar-library-1.2_7fc64115653054c76d9eb2ddede7b95f62a42098.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.mani\ThinDownloadManager\1.2.5\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -205,7 +196,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.0"
-        sha1="1b254fa77dc44833abfc6874081bc8a99434c195">
+        sha1="a2e7ee5e529d845fe76cabaad56d08d8a4bf9dbd">
         <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_40e0158c73fc9ab9dd6be54c390587abf96fdbd8.jar" />
     </item>
     <item
@@ -432,15 +423,6 @@
         revision="25.0.0"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
         <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.2.1_ebc6bb91d099630a016e77117e69084b7ccd95e7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\exploded-aar\com.daimajia.numberprogressbar\library\1.2\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.0"
-        sha1="4196173ec5799ff211761f90874802789c6cc4ac">
-        <dex dex="C:\Users\Nuark\Documents\GitHub\MobReactor\app\build\intermediates\pre-dexed\debug\com.daimajia.numberprogressbar-library-1.2_7fc64115653054c76d9eb2ddede7b95f62a42098.jar" />
     </item>
 
 </items>

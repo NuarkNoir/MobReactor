@@ -1,7 +1,6 @@
 package com.nuark.mobile.joyreactor;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -20,14 +19,11 @@ import com.thin.downloadmanager.ThinDownloadManager;
 public class FullscreenPictureActivity extends Activity {
     static String url;
     private final ThinDownloadManager downloadManager = new ThinDownloadManager();
-    SharedPreferences sPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen_picture);
-
-        sPref = getPreferences(MODE_APPEND);
 
         Bundle extras = getIntent().getExtras();
 
@@ -45,13 +41,11 @@ public class FullscreenPictureActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Uri downloadUri = Uri.parse(url);
-                Uri destinationUri; //= Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/MRF/" + downloadUri.getLastPathSegment());
-                String savedText = sPref.getString("save_directory", "" );
-                if (savedText != "")
-                    destinationUri = Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/" + savedText + "/" + downloadUri.getLastPathSegment());
-                else
-                    destinationUri = Uri.parse(Environment.getExternalStorageDirectory().getPath() + "/MRF/" + downloadUri.getLastPathSegment());
-                DownloadRequest downloadRequest = new DownloadRequest(downloadUri).setDestinationURI(destinationUri).setStatusListener(new DownloadStatusListenerV1() {
+                Uri destinationUri = destinationUri = Uri.parse(Environment.getExternalStorageDirectory()
+                        .getPath() + "/MRF/" + downloadUri.getLastPathSegment());
+                DownloadRequest downloadRequest = new DownloadRequest(downloadUri)
+                        .setDestinationURI(destinationUri)
+                        .setStatusListener(new DownloadStatusListenerV1() {
                     @Override
                     public void onDownloadComplete(DownloadRequest downloadRequest) {
                         Toast.makeText(FullscreenPictureActivity.this, "Успешно сохранено!", Toast.LENGTH_SHORT).show();
@@ -70,11 +64,8 @@ public class FullscreenPictureActivity extends Activity {
                     }
                 });
                 int downloadId = downloadManager.add(downloadRequest);
-                Toast.makeText(FullscreenPictureActivity.this, "Изображение будет сохранено в галерею.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FullscreenPictureActivity.this, "Изображение будет сохранено в ФС.", Toast.LENGTH_SHORT).show();
             }
         });
-
-
-
     }
 }

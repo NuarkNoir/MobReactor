@@ -15,8 +15,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -29,7 +34,6 @@ import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    final static String base_url = "http://pornreactor.cc/tag/";
     static ArrayList<String> links = new ArrayList<>();
     static ArrayList<String> urls_list = new ArrayList<>();
     static ArrayList<String> tags_list = new ArrayList<>();
@@ -51,14 +55,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         cont = this;
         sPref = getPreferences(MODE_APPEND);
-        String savedText = sPref.getString("save_directory", "" );
-        mkd(savedText);
-        if (savedText == "") {
-            mkd("/MRF");
-        } else {
-            mkd(savedText);
-        }
-        urls_list.add(base_url + "r34");
+        mkd(Globals.getSavePath());
+        mkd("/MRF");
+        urls_list.add(Globals.getJoyUrl() + "tag/r34");
         links = new ArrayList<>();
         tags_list = new ArrayList<>();
         authors_list = new ArrayList<>();
@@ -70,12 +69,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        //drawer.setDrawerListener(toggle);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override
@@ -165,6 +178,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    public void refreshUserState(View view) {
+        refreshUser();
+    }
+
+    void refreshUser(){
+        try {
+            ImageView userava = (ImageView) findViewById(R.id.userAvatar);
+            TextView tv = (TextView) findViewById(R.id.usersName);
+            Glide.with(cont).load(Globals.getUserAvatarUrl()).override(60, 60).placeholder(R.mipmap.ic_launcher).into(userava);
+            tv.setText(Globals.getUsername());
+        } catch (Exception ex) {
+            Toast.makeText(cont, "ЕГГОГ::: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+        //Toast.makeText(cont, "cookies:::" + Globals.Cookies.getCookies(), Toast.LENGTH_SHORT).show();
+    }
+
     class loadingTask extends AsyncTask<Void, Void, Void> {
         //http://try.jsoup.org/~a5UybIswFzRGoKv9HQQQe784nlk
         @Override
@@ -205,7 +234,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             else {
                 currPage = urls_list.get(0);
             }
-            d = Jsoup.connect(currPage).get();
+            if (Globals.Cookies.Cookies != null) {
+                d = Jsoup.connect(currPage).get();
+            } else {
+                d = Jsoup.connect(currPage).cookies(Globals.Cookies.getCookies()).get();
+            }
             System.out.println("URL: " + currPage);
         } catch (Exception ex) {
             System.out.println("Ашипка D: \n" + ex.getMessage() + "\nOn: " + currPage);

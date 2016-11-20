@@ -8,7 +8,7 @@ android {
         minSdkVersion 10
         targetSdkVersion 24
         versionCode 1
-        versionName "4.b2"
+        versionName "5.b1"
         project.ext.set("archivesBaseName", "MobReactor-" + defaultConfig.versionName);
     }
     buildTypes {
@@ -26,5 +26,4 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.mani:ThinDownloadManager:1.2.5'
-    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
 }
