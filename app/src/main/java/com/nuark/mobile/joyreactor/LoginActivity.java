@@ -1,6 +1,9 @@
 package com.nuark.mobile.joyreactor;
 
+import android.app.Application;
+import android.app.Notification;
 import android.os.AsyncTask;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,16 +22,19 @@ import org.jsoup.nodes.Document;
 import java.io.IOException;
 import java.util.Map;
 
+import static android.support.design.widget.Snackbar.LENGTH_SHORT;
+import static com.nuark.mobile.joyreactor.R.layout.activity_login;
+
 public class LoginActivity extends AppCompatActivity {
 
     private static String login, pass, csrf_token;
     static Boolean logined = false;
-    Globals.Cookies gc = new Globals.Cookies();
+    View view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(activity_login);
 
         Button loginBtn = (Button) findViewById(R.id.login_button);
         loginBtn.setOnClickListener(new View.OnClickListener() {
@@ -36,12 +42,13 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 loginTask lT = new loginTask();
                 lT.execute();
+                view = v;
+                Snackbar.make(v, "Логинимся...", LENGTH_SHORT).show();
             }
         });
     }
 
     class loginTask extends AsyncTask<Void, Void, Void> {
-        //http://try.jsoup.org/~a5UybIswFzRGoKv9HQQQe784nlk
         @Override
         protected Void doInBackground(Void... params) {
             makeAuth();
@@ -58,8 +65,14 @@ public class LoginActivity extends AppCompatActivity {
             super.onPostExecute(result);
             TextView tv = (TextView) findViewById(R.id.csrf_token);
             tv.setText(csrf_token + ":::" + logined + ":::" + Globals.getUsername());
-            if (!logined) tv.setTextColor(getResources().getColor(R.color.colorPrimary));
-            else tv.setTextColor(getResources().getColor(R.color.colorAccent));
+            if (!logined) {
+                tv.setTextColor(getResources().getColor(R.color.colorPrimary));
+                Snackbar.make(view, "Ошибка авторизации!", LENGTH_SHORT).show();
+            }
+            else {
+                tv.setTextColor(getResources().getColor(R.color.colorAccent));
+                Snackbar.make(view, "Авторизован как " + login + "!", LENGTH_SHORT).show();
+            }
         }
     }
 

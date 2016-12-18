@@ -5,15 +5,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Настройки</string>
-    <string name="image_not_loaded">Blajad! Ничего нет!</string>
-    <string name="load">Sync</string>
-    <string name="action_clear">Очистить</string>
-    <string name="action_save">Сохранить</string>
     <string name="url_string">"URL: "</string>
     <string name="author_not_loaded">Ник автора не загружен</string>
     <string name="img_tags">Тэги изображения не загружены</string>
     <string name="date_date">Date::Date</string>
-    <string name="date_time">Date::Time</string>
     <string name="sync_with_reactor">Sync w/ Reactor</string>
     <string name="functions">Functions</string>
     <string name="options">Options</string>

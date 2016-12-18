@@ -178,10 +178,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    public void refreshUserState(View view) {
-        refreshUser();
-    }
-
     void refreshUser(){
         try {
             ImageView userava = (ImageView) findViewById(R.id.userAvatar);
@@ -191,11 +187,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } catch (Exception ex) {
             Toast.makeText(cont, "ЕГГОГ::: " + ex.getMessage(), Toast.LENGTH_SHORT).show();
         }
-        //Toast.makeText(cont, "cookies:::" + Globals.Cookies.getCookies(), Toast.LENGTH_SHORT).show();
+    }
+
+    public void refreshUserState(View view) {
+        refreshUser();
     }
 
     class loadingTask extends AsyncTask<Void, Void, Void> {
-        //http://try.jsoup.org/~a5UybIswFzRGoKv9HQQQe784nlk
         @Override
         protected Void doInBackground(Void... params) {
             gettr(nextPageNum);

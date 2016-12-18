@@ -106,12 +106,7 @@ class Globals {
         }
 
         static boolean containCookies(Map<String, String> cookies){
-            if (Cookies != null) {
-                return true;
-            }
-            else {
-                return false;
-            }
+            return Cookies != null;
         }
     }
 }

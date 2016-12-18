@@ -24,36 +24,4 @@ class Utils {
         }
         return decoded_url;
     }
-
-    public void download(String url, String filename){
-        InputStream in=null;
-        FileOutputStream fOut=null;
-        System.out.println("Downloading ...");
-
-        try{
-            URL remoteFile = new URL(url);
-            URLConnection fileStream=remoteFile.openConnection();
-
-            // Open output and input streams
-            fOut=new FileOutputStream(filename);
-
-            in=fileStream.getInputStream();
-
-            // Save the file
-            int data;
-            while((data=in.read())!=-1){
-                fOut.write(data);
-            }
-
-        } catch (Exception e){
-            e.printStackTrace();
-        } finally{
-            System.out.println("The file " + url + " has been downloaded successfully as " + checkWithRegExp(url));
-            try{
-                in.close();
-                fOut.flush();
-                fOut.close();
-            } catch(Exception e){e.printStackTrace();}
-        }
-    }
 }
