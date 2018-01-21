@@ -23,8 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".FullscreenPictureActivity" />
-        <activity android:name=".SettingsActivity" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".Settings"></activity>
     </application>
 
 </manifest>

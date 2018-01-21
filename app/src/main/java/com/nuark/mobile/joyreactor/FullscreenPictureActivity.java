@@ -16,8 +16,10 @@ import com.thin.downloadmanager.DownloadRequest;
 import com.thin.downloadmanager.DownloadStatusListenerV1;
 import com.thin.downloadmanager.ThinDownloadManager;
 
+import java.io.UnsupportedEncodingException;
+
 public class FullscreenPictureActivity extends Activity {
-    static String url;
+    private static String url;
     private final ThinDownloadManager downloadManager = new ThinDownloadManager();
 
     @Override
@@ -29,20 +31,27 @@ public class FullscreenPictureActivity extends Activity {
 
         url = extras.getString("URL");
         TextView textView = (TextView) findViewById(R.id.bP_Url);
-        String ttd = getString(R.string.url_string) + url;
+        String ttd = "URL: " + url_decoder(url);
         textView.setText(ttd);
         ImageView imageView = (ImageView) findViewById(R.id.basePict);
         Glide.with(this).load(url).into(imageView);
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.loadingProgressBar);
 
+        final String dir;
+        if (Globals.getSavePath() == ""){
+            dir = Environment.getExternalStorageDirectory().getPath() + "/MRF/";
+            Toast.makeText(this, dir, Toast.LENGTH_SHORT).show();
+        } else {
+            dir = Environment.getExternalStorageDirectory().getPath() + "/" + Globals.getSavePath() + "/";
+            Toast.makeText(this, dir, Toast.LENGTH_SHORT).show();
+        }
         Button btn = (Button) findViewById(R.id.downloadButton);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Uri downloadUri = Uri.parse(url);
-                Uri destinationUri = destinationUri = Uri.parse(Environment.getExternalStorageDirectory()
-                        .getPath() + "/MRF/" + downloadUri.getLastPathSegment());
+                Uri destinationUri = Uri.parse(dir + downloadUri.getLastPathSegment());
                 DownloadRequest downloadRequest = new DownloadRequest(downloadUri)
                         .setDestinationURI(destinationUri)
                         .setStatusListener(new DownloadStatusListenerV1() {
@@ -67,5 +76,15 @@ public class FullscreenPictureActivity extends Activity {
                 Toast.makeText(FullscreenPictureActivity.this, "Изображение будет сохранено в ФС.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private static String url_decoder(String url) {
+        String decoded_url = null;
+        try {
+            decoded_url = java.net.URLDecoder.decode(url, "UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        return decoded_url;
     }
 }

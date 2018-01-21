@@ -1,7 +1,12 @@
 package com.nuark.mobile.joyreactor;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -9,13 +14,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.AsyncTask;
-import android.os.Environment;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,22 +32,20 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import static android.view.View.GONE;
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    static ArrayList<String> links = new ArrayList<>();
-    static ArrayList<String> urls_list = new ArrayList<>();
-    static ArrayList<String> tags_list = new ArrayList<>();
-    static ArrayList<String> authors_list = new ArrayList<>();
-    static ArrayList<String> date_date_list = new ArrayList<>();
-    static ArrayList<String> date_time_list = new ArrayList<>();
-    static CustomListAdapter arrad;
-    static Document d = null;
-    static Context cont;
-    static Elements postContainers, j, l, m, k;
-    Activity act = this;
-    boolean just_start;
-    static int nextPageNum, currPg;
-    static String currPage;
+    private static ArrayList<String> links, tags_list, authors_list;
+    private static final ArrayList<String> date_date_list = new ArrayList<>();
+    private static final ArrayList<String> date_time_list = new ArrayList<>();
+    private static Document d = null;
+    private static Context cont;
+    private final Activity act = this;
+    private boolean just_start;
+    private static int nextPageNum;
+    private static int currPg;
+    private static String currPage;
     static SharedPreferences sPref;
 
     @Override
@@ -55,40 +53,63 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         cont = this;
         sPref = getPreferences(MODE_APPEND);
-        mkd(Globals.getSavePath());
-        mkd("/MRF");
-        urls_list.add(Globals.getJoyUrl() + "tag/r34");
+        if (Globals.getSavePath() == ""){
+            mkd("/MRF");
+        } else {
+            mkd("/" + Globals.getSavePath());
+        }
         links = new ArrayList<>();
         tags_list = new ArrayList<>();
         authors_list = new ArrayList<>();
-		
+        {
+            int gc = Globals.Cookies.getPlainCookies();
+            if (gc != 0) {
+                Toast.makeText(cont, R.string.error_getPlainCookies + gc, Toast.LENGTH_SHORT).show();
+            }
+        }
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-            this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.ndo, R.string.ndc);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
+        final Button forwarder = (Button) findViewById(R.id.forwarder);
+        forwarder.setVisibility(GONE);
+        forwarder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextPageNum = currPg - 1;
+                start_loading();
+                Toast.makeText(cont, "Грузим дальше...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        final Button backer = (Button) findViewById(R.id.backer);
+        backer.setVisibility(GONE);
+        backer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextPageNum = currPg + 1;
+                start_loading();
+                Toast.makeText(cont, "Подгружаем прошлое...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button syncer = (Button) findViewById(R.id.syncer);
+        syncer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                nextPageNum = currPg;
+                start_loading();
+                Toast.makeText(cont, "Грузим...", Toast.LENGTH_SHORT).show();
+                backer.setVisibility(View.VISIBLE);
+                forwarder.setVisibility(View.VISIBLE);
+            }
+        });
     }
 
     @Override
@@ -101,36 +122,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
          //Handle navigation view item clicks here.
         int id = item.getItemId();
 
         switch (id){
-            case (R.id.action_load):
-                nextPageNum = currPg;
-                start_loading();
-                Toast.makeText(cont, "<>", Toast.LENGTH_SHORT).show();
-                break;
             case (R.id.action_load_tfa):
                 openTFA();
                 break;
-            case (R.id.action_settings):
-                openSettings();
-                break;
-            case (R.id.action_load_nextpage):
-                nextPageNum = currPg - 1;
-                start_loading();
-                Toast.makeText(cont, ">>", Toast.LENGTH_SHORT).show();
-                break;
-            case (R.id.action_load_previouspage):
-                nextPageNum = currPg + 1;
-                start_loading();
-                Toast.makeText(cont, "<<", Toast.LENGTH_SHORT).show();
-                break;
             case (R.id.action_login):
                 openLoginActivity();
+                break;
+            case (R.id.action_settings):
+                openSettingsActivity();
                 break;
         }
 
@@ -139,36 +144,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    private void loadNextPage() {
-        if (nextPageNum != 0){
-            loadingTask lT = new loadingTask();
-            lT.execute();
-        }
-    }
-
-    public void start_loading() {
+    private void start_loading() {
         loadingTask lT = new loadingTask();
         lT.execute();
     }
 
-    public void openSettings() {
-        Intent intent = new Intent(cont, com.nuark.mobile.joyreactor.SettingsActivity.class);
-        cont.startActivity(intent);
-    }
-
-    public void openLoginActivity() {
+    private void openLoginActivity() {
         Intent intent = new Intent(cont, com.nuark.mobile.joyreactor.LoginActivity.class);
         cont.startActivity(intent);
     }
 
-    public void openTFA() {
+    private void openSettingsActivity() {
+        Intent intent = new Intent(cont, com.nuark.mobile.joyreactor.Settings.class);
+        cont.startActivity(intent);
+    }
+
+    private void openTFA() {
         Toast.makeText(cont,"Launching test activity...", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(this, FullscreenPictureActivity.class);
         intent.putExtra("URL", "http://gelbooru.com/samples/86/0d/sample_860dc031628b1605a3d5092a442b2a92.jpg");
         startActivity(intent);
     }
 
-    void mkd(String name) {
+    private void mkd(String name) {
         String path = Environment.getExternalStorageDirectory().getPath() + name;
         File dir_to_save = new File(path);
         try {
@@ -178,7 +176,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    void refreshUser(){
+    private void refreshUser(){
         try {
             ImageView userava = (ImageView) findViewById(R.id.userAvatar);
             TextView tv = (TextView) findViewById(R.id.usersName);
@@ -193,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         refreshUser();
     }
 
-    class loadingTask extends AsyncTask<Void, Void, Void> {
+    private class loadingTask extends AsyncTask<Void, Void, Void> {
         @Override
         protected Void doInBackground(Void... params) {
             gettr(nextPageNum);
@@ -216,7 +214,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Collections.reverse(links);
             Collections.reverse(authors_list);
             Collections.reverse(tags_list);
-            arrad = new CustomListAdapter(act, links, authors_list, tags_list, date_date_list, date_time_list);
+            CustomListAdapter arrad = new CustomListAdapter(
+                    act,
+                    links,
+                    authors_list,
+                    tags_list,
+                    date_date_list,
+                    date_time_list
+            );
             arrad.notifyDataSetChanged();
             lv.setAdapter(arrad);
             just_start = false;
@@ -224,18 +229,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    public static void gettr(int nxtPg) {
+    private static void gettr(int nxtPg) {
         try {
             if (nxtPg > 0) {
-                currPage = urls_list.get(0) + "/" + nextPageNum;
+                currPage = Globals.getJoyUrl() + "tag/r34/" + nextPageNum;
             }
             else {
-                currPage = urls_list.get(0);
+                currPage = Globals.getJoyUrl() + "tag/r34";
             }
             if (Globals.Cookies.Cookies != null) {
                 d = Jsoup.connect(currPage).get();
             } else {
-                d = Jsoup.connect(currPage).cookies(Globals.Cookies.getCookies()).get();
+                d = Jsoup.connect(currPage).cookies(Globals.Cookies.getCookies()).timeout(10000).get();
             }
             System.out.println("URL: " + currPage);
         } catch (Exception ex) {
@@ -243,16 +248,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
 
         if (d != null) {
-            postContainers = d.select(".postContainer");
-            k = d.select(".pagination .pagination_main .pagination_expanded .current");
+            Elements postContainers = d.select(".postContainer");
+            Elements k = d.select(".pagination .pagination_main .pagination_expanded .current");
             for (Element element : k) {
                 currPg = Integer.parseInt(element.text());
             }
 
             for (Element el : postContainers) {
-                l = el.select(".post_top .uhead .uhead_nick img");  //Parsing author of post
-                m = el.select(".post_top .taglist");                //Parsing image tags
-                j = el.select(".image a");
+                Elements l = el.select(".post_top .uhead .uhead_nick img");
+                Elements m = el.select(".post_top .taglist");
+                Elements j = el.select(".image a");
 
                 for (Element _item : j) {
                     if (_item.hasAttr("href"))

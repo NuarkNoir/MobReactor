@@ -4,21 +4,9 @@
     <item android:title="@string/functions">
         <menu>
             <item
-                android:id="@+id/action_load"
-                android:icon="@drawable/ic_sync_white_48dp"
-                android:title="@string/sync_with_reactor" />
-            <item
                 android:id="@+id/action_load_tfa"
                 android:icon="@drawable/ic_sync_white_48dp"
                 android:title="Launch TFA" />
-            <item
-                android:id="@+id/action_load_nextpage"
-                android:icon="@android:drawable/arrow_up_float"
-                android:title="@string/action_load_nextpage" />
-            <item
-                android:id="@+id/action_load_previouspage"
-                android:icon="@android:drawable/arrow_down_float"
-                android:title="@string/action_load_previouspage" />
         </menu>
     </item>
 

@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">MobReactor</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="ndo">Open navigation drawer</string>
+    <string name="ndc">Close navigation drawer</string>
 
     <string name="action_settings">Настройки</string>
-    <string name="url_string">"URL: "</string>
     <string name="author_not_loaded">Ник автора не загружен</string>
     <string name="img_tags">Тэги изображения не загружены</string>
     <string name="date_date">Date::Date</string>
@@ -19,4 +18,15 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="title_activity_settings">Настройки</string>
+
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="error_getPlainCookies">Ошибка при получении чистых кукисов.\n Перезапустите приложение.\n Hashcode: </string>
+    <string name="goback_"><![CDATA[<--]]></string>
+    <string name="sync">Sync</string>
+    <string name="goforw_"><![CDATA[-->]]></string>
 </resources>
